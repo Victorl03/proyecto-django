@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Alumnos #Accedemos al modelo Alumnos que contiene la estructura de la tabla.
+from .models import Alumnos, ComentarioContacto #Accedemos al modelo Alumnos que contiene la estructura de la tabla.
 from.forms import ComentarioContactoForm
 
 # Create your views here.
@@ -14,10 +14,11 @@ def registrar(request):
         form = ComentarioContactoForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request,'registros/contacto.html')
+            comentarios = ComentarioContacto.objects.all()
+            return render(request, "registros/consultaContacto.html", {'comentarios': comentarios})
     form = ComentarioContactoForm()
     #si sale mal se reenvian al formulario de los datos ingresados
-    return render(request,'registros/contacto.html',{'form':form})
+    return render(request,'registros/contacto.html', {'form': form})
 
 def contacto(request):
     return render(request, "registros/contacto.html")
