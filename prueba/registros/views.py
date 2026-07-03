@@ -15,7 +15,7 @@ def registrar(request):
         if form.is_valid():
             form.save()
             comentarios = ComentarioContacto.objects.all()
-            return render(request, 'registros/consultaContacto.html', {'comentarios': comentarios})
+            return render(request, "registros/consultaContacto.html", {'comentarios': comentarios})
     form = ComentarioContactoForm()
     #si sale mal se reenvian al formulario de los datos ingresados
     return render(request,'registros/contacto.html', {'form': form})

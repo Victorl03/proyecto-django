@@ -1,0 +1,47 @@
+{% extends "inicio/encabezado.html" %}
+
+{% 
+    {% block titulo %} Comentarios {% endblock titulo %}
+%}
+
+{% block encabezado %}
+				<!--Encabezdo -->
+			<div class="page-header">
+				<div class="page-title">
+					<h3>comentarios
+				    <small>Lista de Comentarios </small></h3>
+				</div>
+				
+			</div>
+			<!-- /Encabezado-->
+{% endblock encabezado %}
+
+{% block contenido %}
+		<!-- Contenido Principal-->
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Usuario</th>
+					<th>Mensaje</th>
+					<th></th>
+					<th></th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				{% for comentario in comentarios %}
+					<tr>
+						<td class="text-semibold">{{comentario.usuario}}</td>
+						<td class="text-semibold">{{comentario.mensaje}}</td>
+						<td cllass="text-center">
+							<a href="" class="btn btn-primary">Editar</a>
+						</td>
+						<td class="text-center">
+							<a href="" class="btn btn-danger">Eliminar</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+        <!-- /Contenido Principal-->'
+{% endblock %}
