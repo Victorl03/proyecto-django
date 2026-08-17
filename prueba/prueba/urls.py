@@ -34,6 +34,20 @@ urlpatterns = [
     path('formulario/', formulario, name='formulario'),
     path('ejemplo/', ejemplo, name="ejemplo"),
     path('registrar/', views_registros.registrar, name="Registrar"),
+    path('consultaContacto/', views_registros.consultaContacto, name="consultaContacto"),
+    path('eliminarComentario/<int:id>/', views_registros.eliminarComentario, name='eliminar'),
+    path('formEditarComentario/<int:id>/', views_registros.consultarComentarioIndividual, name='ConsultaIndividual'),
+    path('editarComentario/<int:id>/', views_registros.editarComentarioContacto, name='editar'),
+    path('consultas/', views_registros.consultas, name="consultas"),
+    path('consultas1/', views_registros.consultar1, name="consultas1"),
+    path('consultas2/', views_registros.consultar2, name="consultas2"),
+    path('consultas3/', views_registros.consultar3, name="consultas3"),
+    path('consultas4/', views_registros.consultar4, name="consultas4"),
+    path('consultas5/', views_registros.consultar5, name="consultas5"),
+    path('consultas6/', views_registros.consultar6, name="consultas6"),
+    path('consultas7/', views_registros.consultar7, name="consultas7"),
+    path('consultasSQL/', views_registros.consultasSQL, name="sql"),
+    path('subir',views_registros.archivos,name="subir"),
 ]
 
 if settings.DEBUG:
